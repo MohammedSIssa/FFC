@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Farm Calculator</title>
+    <link rel="stylesheet" href="backup.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+</head>
+<body class="">
+    <div class="container">
+        <div class="header-container ">
+            <div class="select-elements">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                    <option value="Animals">Animals</option>
+                    <option selected value="Machines">Machines</option>
+                </select>
+                <label for="MachineAnimal"><span id="MA"></span></label>
+                <select name="type-spec" id="MachineAnimal"></select>
+                <label for="products">Product</label>
+                <select name=" products" id="products" autofocus></select>
+                <label for="slots">Slots</label>
+                <input type="text" id="slots">
+                <button id="reset">Reset</button>
+            </div>
+            <div class="search-top-products ">
+                <!-- <label for="search">Search Product</label> -->
+                 <!-- <div class="search-box"> -->
+                    <input type="text" id="search" class="hidden" placeholder="Enter Product Name">
+                    <!-- <div class="search-results hidden"></div> -->
+                    <select name="top-products" id="top-products"></select>
+                <select name="top-amount" id="top-amount">
+                    <option>5</option>
+                    <option>10</option>
+                    <option selected>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                    <option>30</option>
+                </select>
+                 <!-- </div> -->
+                <!-- <label for="top-products">Top Products:</label> -->
+            </div>    
+        </div>
+        <hr class="mb-10">
+        <div class="requirements-container " style="background-image: url(./images/noise.png);">
+            <div class="requirements"></div>
+            <div class="tool-product"></div>
+        </div>
+        <div class="calculation-container " style="background-image: url(./images/noise.png);"></div>
+        <div class="themes">
+            <div class="colors">
+                <div class="color default"></div>
+                <div class="color night"></div>
+                <div class="color colorful"></div>
+                <div class="color purple"></div>
+            </div>
+            <div class="toggle-auto">
+                Product Based Theme
+                <form action="#" id="toggle-or-not">
+                    
+                    <input type="radio" name="toggle-or-not" id="yes">
+                    <label for="yes">Yes</label>
+                    
+                    <input type="radio" name="toggle-or-not" id="no">
+                    <label for="no">No</label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="backup.js"></script>
+</body>
+</html>
