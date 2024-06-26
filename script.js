@@ -1,4 +1,4 @@
-var defaultSlots = 934
+var defaultSlots = 1007
 var slots = document.querySelector('#slots')
 var defaultColors = document.querySelector('.color.default')
 var nightColors = document.querySelector('.color.night')
@@ -2015,87 +2015,6 @@ function sumArr(a){
     return sum
 }
 
-var PreRequiringTools = {
-    "ToolImage": "",
-    "ToolName": "",
-    "ToolTime": "",
-    "Products": [],
-    "ProductsImages": [],
-    "ProductPrice": [],
-    "Required": [],
-    "RequiredImages": [],
-    "RequiredTool": [],
-    "RequiredToolName": [],
-    "RequiredToolTime": [],
-    "RequiredPrice": [],
-    "SeedRequired": [],
-    "SeedRequiredImages": [],
-    "SeedPrice": [],
-    "PreRequired": [],
-    "PreRequiredProductImages": [],
-    "PreRequiredTool": [],
-    "PreRequiredToolTime": [],
-    "PreRequiredToolName": [],
-    "PreRequiredPrice": [],
-    "PreRequiredSeed" : [],
-    "PreRequiredImages": [],
-    "PreRequiredSeedPrice": []
-}
-
-var nonPreRequiringTools = {
-    "ToolImage": "",
-    "ToolName": "",
-    "ToolTime": "",
-    "Products": [],
-    "ProductsImages": [],
-    "ProductPrice": [],
-    "SeedRequired": [],
-    "SeedRequiredImages": [],
-    "SeedPrice": [],
-    "PreRequired": null
-}
-
-var animalsData = {
-    "ToolImage": "",
-    "ToolName": "",
-    "ToolTime": "",
-    "Products": [],
-    "ProductsImages": [],
-    "ProductPrice": [],
-    "SeedRequired": [],
-    "SeedRequiredImages": [],
-    "SeedPrice": [],
-    "PreRequired": null
-}
-
-var allMachines = [
-    "Baker", 
-    "Pizza Machine", 
-    "Pie Machine", 
-    "Sauce Machine", 
-    "Bouquet Machine",
-    "Oil Press",
-    "Envelope Machine",
-    "Jacket Machine",
-    "Cheese Master",
-    "Coffee Cup Machine",
-    "Garden Kneeter Machine",
-    "Sausage Machine",
-    "Jam Machine",
-    "Dutch Mill",
-    "Perfume Machine",
-    "Sugar Machine",
-    "Cool Packer",
-    "Weaver",
-    "Can Machine",
-    "Hotdog Machine",
-    "Hat Machine",
-    "Smoke House",
-    "BBQ Machine",
-    "Tea Master",
-    "Wine Maker"
-]
-
 updateMA()
 document.querySelector('#type').addEventListener('change', updateMA)
 document.querySelector('#MachineAnimal').addEventListener('change', getProducts)
@@ -2123,13 +2042,6 @@ function searchHidden(){
     document.querySelector('#search').className = "hidden"
     document.querySelector('#search').value = "Search"
 }
-
-//console.log(products, productPrice, seedPrice, profit)
-
-//console.log(sortedProducts, sortedProfit)
-// console.log(sortedProducts)
-// console.log(`#${sortedProducts.indexOf("Onion Pizza") + 1}`)
-//console.log(sortedProducts.indexOf(data.Machines["Pizza Machine"].Products.indexOf("Mushroom Pizza")))
 
 function getTopProducts(){
     document.querySelector("#top-products").innerHTML = "<option selected>Top Products</option>"
@@ -2177,9 +2089,6 @@ function getProducts(){
     }
     let [sortedP, sortedProfit] = sortPlantPrices(MachineProducts, productsIndices)
     let actullaySorted = sortedP.reverse()
-    // console.log(productsIndices, actullaySorted)
-
-    // let [sortedProducts, sortedProfit] = sortPlantPrices(MachineProducts, productPrices)
 
     products.innerHTML = ""
     for(let i = 0; i < actullaySorted.length; i++){
@@ -2660,8 +2569,6 @@ function getProductsPrices(){
     }
 }
 
-
-
 function checkProductTheme(){
     let defaultThemeProducts = [
         "Peach Can", 
@@ -2775,116 +2682,3 @@ function checkProductTheme(){
         })
     }
 }
-
-// let history = []
-// let historyNoDuplicates = [...new Set(history)]
-
-// console.log(historyNoDuplicates)
-
-
-// searchBox.addEventListener('click', ()=>{
-//     document.querySelector('.search-results').innerHTML = ""
-//     //console.log([...new Set(history)], [...new Set(history)].length)
-    
-//     // document.querySelector('.search-results').className = "search-results visible"
-//     // for(let i = 0; i < [...new Set(history)].length; i++){
-//     //     document.querySelector('.search-results').innerHTML += `<div class="result">${[...new Set(history)][i]}</div>`
-//     // }
-
-//     document.querySelectorAll('.result').forEach(result => {
-//         result.addEventListener('click', ()=> {
-//             searchFor(result.textContent)
-//             resultsHidden()
-//             // document.querySelector('.search-results').className = "search-results hidden"
-//             document.querySelector('#search').value = "Search"
-//         })
-//     })
-// })
-
-// searchBox.addEventListener('keypress', ()=>{
-//     if(searchBox.value.length == 0){
-//         document.querySelector('.search-results').innerHTML = ""
-//     }
-//     else{
-//         document.querySelector('.search-results').innerHTML = ""
-//         // history = []
-//         if(document.querySelector('#search').value.length != 0){
-//             let productSearched = document.querySelector('#search').value
-//             document.querySelector('.search-results').className = "search-results visible"
-//             for(let i = 0; i < sortedProducts.length; i++){
-//                 let regEx = new RegExp(String(productSearched), 'gi')
-//                 if(regEx.test(sortedProducts[i])){
-//                     // suggested.push(sortedProducts[i])
-//                     document.querySelector('.search-results').innerHTML += `<div class ="result">${sortedProducts[i]}</div>`
-//                 }
-//             }
-//         }
-//         document.querySelectorAll('.result')
-//         .forEach(result => {
-//             result.addEventListener('click', ()=>{
-//             console.log('clicked', result.textContent)
-//             searchFor(result.textContent)
-//             history.push(result.textContent)
-//             document.querySelector('.search-results').className = "search-results hidden"
-//             document.querySelector('#search').value = "Search"
-//             })
-//         })
-//     } 
-// })
-
-// searchBox.addEventListener('focusout', ()=>{
-//     document.querySelector('.search-results').className = "search-results hidden"
-// })
-
-// document.querySelectorAll('.result')
-// .forEach(result => {
-//     result.addEventListener('click', ()=>{
-//         console.log('clicked', result)
-//         document.querySelector('#products').value = result.textContent
-//         getImages()
-//         calculate()
-//     })
-// })
-
-// function searchFor(s){
-//     let productSearched  = s
-//     if(productSearched != ""){
-//         let selectedProduct = document.querySelector('#products')
-//         let type = document.querySelector('#type').value
-//         // Search code for Machines
-//         for(let i = 0; i < Machines.length; i++){
-//             for(let j = 0; j < data.Machines[Machines[i]].Products.length; j++){
-//                 if(capitalized(productSearched) == data.Machines[Machines[i]].Products[j]){
-//                     document.querySelector('#type').value = "Machines"
-//                     document.querySelector('#MachineAnimal').innerHTML = `<option>${Machines[i]}</option>`
-//                     selectedProduct.innerHTML = `<option>${capitalized(productSearched)}</option>`
-//                     document.querySelector('#products').value = data.Machines[Machines[i]].Products[j]
-//                     //console.log(productSearched, selectedTool.value, document.querySelector('#products').value, i, data.Machines[Machines[i]].Products[j])
-//                     type.value = "Machines"
-//                     getImages()
-//                     calculate()
-//                     document.querySelector('#search').value = ""
-//                     break
-//                 }
-//             }
-//         }
-//         // Search code for animals
-//         for(let i = 0; i < Animals.length; i++){
-//             for(let j = 0; j < data.Animals[Animals[i]].Products.length; j++){
-//                 if(capitalized(productSearched) == data.Animals[Animals[i]].Products[j]){
-//                     //console.log("searching...")
-//                     document.querySelector('#type').value = "Animals"
-//                     document.querySelector('#MachineAnimal').innerHTML = `<option>${Animals[i]}</option>`
-//                     selectedProduct.innerHTML = `<option>${capitalized(productSearched)}</option>`
-//                     document.querySelector('#products').value = data.Animals[Animals[i]].Products[j]
-//                     //console.log(productSearched, selectedTool.value, document.querySelector('#products').value, i, data.Animals[Animals[i]].Products[j])
-//                     //document.querySelector('#search').className = "success"
-//                     getImages()
-//                     calculate()
-//                     document.querySelector('#search').value = ""
-//                     break
-//                 }
-//             }
-//         }
-//     } 
-// }
