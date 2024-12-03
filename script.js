@@ -1,13 +1,13 @@
-var defaultSlots = 1007
-var slots = document.querySelector('#slots')
-var defaultColors = document.querySelector('.color.default')
-var nightColors = document.querySelector('.color.night')
-var colorfulColors = document.querySelector('.color.colorful')
-var purpleColors = document.querySelector('.color.purple')
-var searchBox = document.querySelector('#search')
+let defaultSlots = 1007
+let slots = document.querySelector('#slots')
+let defaultColors = document.querySelector('.color.default')
+let nightColors = document.querySelector('.color.night')
+let colorfulColors = document.querySelector('.color.colorful')
+let purpleColors = document.querySelector('.color.purple')
+let searchBox = document.querySelector('#search')
 
-var themesBtn = document.querySelector('.themes')
-var profitPoint = 0
+let themesBtn = document.querySelector('.themes')
+let profitPoint = 0
 
 //Themes Controls Section Start
 // themesBtn.addEventListener('click', () => {
@@ -45,7 +45,7 @@ purpleColors.addEventListener('click', ()=> {
 document.body.className = localStorage.getItem('bg-color')
 // Themes Controls Section End
 
-var Machines = [
+let Machines = [
     "Pizza Machine", 
     "Pie Machine", 
     "BBQ Machine",
@@ -69,7 +69,7 @@ var Machines = [
     "Wine Maker"
 ]
 
-var data = {
+let data = {
     "Machines": {
         "Baker": {
             "ToolImage"           : "./images/machines/baker.png",
@@ -1931,7 +1931,7 @@ var data = {
     }
 }
 
-var Animals = [
+let Animals = [
     "Beehive",
     "Buffalo",
     "Cattle",
@@ -1950,11 +1950,11 @@ var Animals = [
     "White Alpaca"
 ]
 
-var products = []
-var productPrice = []
-var seedPrice = []
-var preSeedsPrice = []
-var profit = []
+let products = []
+let productPrice = []
+let seedPrice = []
+let preSeedsPrice = []
+let profit = []
 getProductsPrices()
 checkProductTheme()
 
@@ -2004,7 +2004,7 @@ function sortPlantPrices(plants, plantsPrices) {
     return [sortedPlants, sortedPrices];
 }
 
-var [sortedProducts, sortedProfit] = sortPlantPrices(products, profit)
+let [sortedProducts, sortedProfit] = sortPlantPrices(products, profit)
 
 function sumArr(a){
     sum = 0
@@ -2099,7 +2099,7 @@ function getProducts(){
     checkProductTheme()
 }
 
-var profitPerUnit
+let profitPerUnit
 
 function getImages(){
     checkProductTheme()
