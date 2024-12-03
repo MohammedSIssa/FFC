@@ -6,8 +6,8 @@ let colorfulColors = document.querySelector('.color.colorful')
 let purpleColors = document.querySelector('.color.purple')
 let searchBox = document.querySelector('#search')
 
-let themesBtn = document.querySelector('.themes')
-let profitPoint = 0
+var themesBtn = document.querySelector('.themes')
+var profitPoint = 0
 
 //Themes Controls Section Start
 // themesBtn.addEventListener('click', () => {
@@ -45,7 +45,7 @@ purpleColors.addEventListener('click', ()=> {
 document.body.className = localStorage.getItem('bg-color')
 // Themes Controls Section End
 
-let Machines = [
+var Machines = [
     "Pizza Machine", 
     "Pie Machine", 
     "BBQ Machine",
@@ -69,7 +69,7 @@ let Machines = [
     "Wine Maker"
 ]
 
-let data = {
+var data = {
     "Machines": {
         "Baker": {
             "ToolImage"           : "./images/machines/baker.png",
@@ -1931,7 +1931,7 @@ let data = {
     }
 }
 
-let Animals = [
+var Animals = [
     "Beehive",
     "Buffalo",
     "Cattle",
@@ -1950,11 +1950,11 @@ let Animals = [
     "White Alpaca"
 ]
 
-let products = []
-let productPrice = []
-let seedPrice = []
-let preSeedsPrice = []
-let profit = []
+var products = []
+var productPrice = []
+var seedPrice = []
+var preSeedsPrice = []
+var profit = []
 getProductsPrices()
 checkProductTheme()
 
@@ -2004,7 +2004,7 @@ function sortPlantPrices(plants, plantsPrices) {
     return [sortedPlants, sortedPrices];
 }
 
-let [sortedProducts, sortedProfit] = sortPlantPrices(products, profit)
+var [sortedProducts, sortedProfit] = sortPlantPrices(products, profit)
 
 function sumArr(a){
     sum = 0
@@ -2099,7 +2099,7 @@ function getProducts(){
     checkProductTheme()
 }
 
-let profitPerUnit
+var profitPerUnit
 
 function getImages(){
     checkProductTheme()
